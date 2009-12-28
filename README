@@ -1,0 +1,7 @@
+Version 0.1 (Dec 28, 2009)
+First release. At the moment, this library allows you to display text, rectangles and bitmaps. Most of the development has been focused on making text output as powerful and simple as possible. It is very similar with using the serial port from the built-in Arduino library.
+
+Note: The Nokia 6100/6610/etc display clones are supposed to use either a Philips PCF8833 controller, or an Epson S1D15G10 controller. I bought my display from eBay and I'm not sure which controller does it use because it doesn't seem to work exactly like one of those two. Maybe the controller itself is a clone. In any case, this is the code that works for me. If it doesn't work for you, contact me.
+
+Used information sources:
+
