@@ -1,3 +1,26 @@
+/*
+  This file is part of Arduino-Color-LCD, an Arduino library for driving
+  Nokia 132x132 color displays, including the "Knock-Off color LCD"
+  from SparkFun.
+  
+  Version 0.1. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
+  December 28, 2009
+  Home page: http://www2.cs.man.ac.uk/~gorgovc9/arduino.html
+
+  Arduino-Color-LCD is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Arduino-Color-LCD is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Arduino-Color-LCD.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #ifndef ColorLCD_h
 #define ColorLCD_h
 
