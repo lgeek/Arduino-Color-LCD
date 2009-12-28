@@ -72,6 +72,7 @@ void ColorLCD::clear()
 {
   colorFill(0, 0, 131, 131, background);
   textLength = 0;
+  moveCursor(5, 5, 120);
 }
 
 // Fills the whole screen with black
@@ -79,6 +80,7 @@ void ColorLCD::reset()
 {
   colorFill(0, 0, 131, 131, 0x00);
   textLength = 0;
+  moveCursor(5, 5, 120);
 }
 
 
