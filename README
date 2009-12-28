@@ -1,7 +1,7 @@
 How to use:
 Copy your the contents of the repository inside arduino/hardware/libraries/ColorLCD. Open the sketch in the "examples" directory for an example. Check ColorLCD.h for a list of public functions.
 
-Haven fun!
+Have fun!
 
 
 Version 0.1 (Dec 28, 2009)
