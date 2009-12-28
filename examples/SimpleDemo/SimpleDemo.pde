@@ -54,7 +54,6 @@ void loop()
   lcd.colorFill(0, 0, 131, 26, BLUE);
   lcd.moveCursor(5, 10);
   lcd.print("Nokia 6100 LCD Demo", RED);
-  delay(5000);
   
   // Print the rest of the text
   Serial.println("Printing the contents");
