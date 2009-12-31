@@ -5,7 +5,8 @@ Have fun!
 
 Version 0.1.1 (Dec 28, 2009)
 This is the new development version. Working on some performance optimizations. Change log from version 0.1:
-* replace the loop used for bit banging with a sequential structure; reset() now takes only 111 milliseconds instead of 183
+* replaced the loop used for bit banging with a sequential structure; reset() now takes only 111 milliseconds instead of 183
+* it doesn't hold the font bitmaps in ram, it loads them from flash when needed. This saves about 500 bytes of RAM, and it seems it isn't slower.
 
 Version 0.1 (Dec 28, 2009)
 First release. At the moment, this library allows you to display text, rectangles and bitmaps. Most of the development has been focused on making text output as powerful and simple as possible. It is very similar with using the serial port from the built-in Arduino library.

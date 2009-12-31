@@ -22,12 +22,13 @@
 */
 
 #include "WProgram.h"
-#include "ColorLCD.h"
+#include <avr/pgmspace.h>
 
+#include "ColorLCD.h"
 
 // Font bitmaps
 // Created by Thomas Jespersen, July 2009
-const byte ColorLCD::font[] = {
+prog_uchar ColorLCD::font[] PROGMEM = {
 0x00 , 0x00 , 0x00 , 0x00 , 0x00 ,
 0x00 , 0x06 , 0x5F , 0x06 , 0x00 ,                      // !
 0x07 , 0x03 , 0x00 , 0x07 , 0x03 ,                      // ,

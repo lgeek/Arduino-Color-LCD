@@ -184,7 +184,7 @@ void ColorLCD::printChar(char c, byte x, byte y, byte width, byte height, byte c
     
     for (int row = 0; row < height; row++)
     {
-      if ((1<<row) & font[start + column])
+      if ((1<<row) & pgm_read_byte_near(font + start + column))
         sendData(color);
       else
         sendData(background);

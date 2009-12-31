@@ -42,6 +42,7 @@
 #define sbi(reg, bit) (reg|= (1<<bit))
 
 #include "WProgram.h"
+#include <avr/pgmspace.h>
 
 class ColorLCD
 {
@@ -102,7 +103,7 @@ class ColorLCD
     
     void setBox(byte x1, byte y1, byte x2, byte y2);
     
-    const static byte font[475];
+    static prog_uchar font[475];
 };
 
 #endif
