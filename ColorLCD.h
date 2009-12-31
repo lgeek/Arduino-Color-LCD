@@ -3,8 +3,8 @@
   Nokia 132x132 color displays, including the "Knock-Off color LCD"
   from SparkFun.
   
-  Version 0.1. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
-  December 28, 2009
+  Version 0.1.1. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
+  December 31, 2009
   Home page: http://www2.cs.man.ac.uk/~gorgovc9/arduino.html
 
   Arduino-Color-LCD is free software: you can redistribute it and/or modify

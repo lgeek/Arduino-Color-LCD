@@ -3,7 +3,7 @@ Copy the contents of the repository inside arduino/hardware/libraries/ColorLCD. 
 
 Have fun!
 
-Version 0.1.1 (Dec 28, 2009)
+Version 0.1.1 (dev version: Dec 28, 2009 - now)
 This is the new development version. Working on some performance optimizations. Change log from version 0.1:
 * replaced the loop used for bit banging with a sequential structure; reset() now takes only 111 milliseconds instead of 183
 * it doesn't hold the font bitmaps in ram, it loads them from flash when needed. This saves about 500 bytes of RAM, and it seems it isn't slower.
