@@ -4,7 +4,7 @@
   from SparkFun.
   
   Version 0.1.1. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
-  December 31, 2009
+  January 10, 2009
   Home page: http://www2.cs.man.ac.uk/~gorgovc9/arduino.html
 
   Arduino-Color-LCD is free software: you can redistribute it and/or modify
@@ -170,6 +170,8 @@ void ColorLCD::colorFill(byte x1, byte y1, byte x2, byte y2, byte color)
   sendCommand(RAMWR);
   for (uint16_t i = 0; i < area; i++)
     sendData(color);
+  // Sometimes the last pixel won't be filled without sending a NOP command
+  sendCommand(NOP);
 }
 
 // Prints a char at position (x, y) with dimensions width and height and color code color
