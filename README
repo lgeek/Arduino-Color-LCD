@@ -16,6 +16,7 @@ Current development version. Change log from version 0.1.1:
 * !!inverted the comm pins order, please modify the wiring or source code
 * some code refactoring
 * all screen areas are now specified as x, y, width, height. Some of them were x1, y1, x2, y2 before.
+* fixed a bug that could cause misalignment of text output with the vertical margins
 
 Version 0.1.1 (dev version: Dec 28, 2009 - January 31, 2010)
 This is the old development version. Change log from version 0.1:

@@ -241,7 +241,8 @@ void ColorLCD::moveCursor(byte x, byte y, byte width)
   textBoxLeftMargin = x;
   textBoxTopMargin = y;
   textLength = 0;
-  textBoxWidth = width;
+  byte charWidth = fontWidth + fontSpacing;
+  textBoxWidth = width / charWidth * charWidth;
 }
 
 // Function used to move the text pointer to a new position
