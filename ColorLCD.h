@@ -70,7 +70,7 @@ class ColorLCD
     void colorFill(byte x, byte y, byte width, byte height, byte color);
     void colorFill(byte x1, byte y1, byte x2, byte y2);
 
-    void printChar(char c, byte x, byte y, byte width, byte height, byte color);
+    void printChar(char c, byte x, byte y, byte width, byte height, byte color, byte zoom = 1);
     void displayBitmap(byte *bitmap, byte x, byte y, byte width, byte height);
 
     void clear();

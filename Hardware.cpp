@@ -173,21 +173,27 @@ void ColorLCD::colorFill(byte x, byte y, byte width, byte height, byte color)
 }
 
 // Prints a char at position (x, y) with dimensions width and height and color code color
-void ColorLCD::printChar(char c, byte x, byte y, byte width, byte height, byte color)
+void ColorLCD::printChar(char c, byte x, byte y, byte width, byte height, byte color, byte zoom)
 {
   uint16_t start = (c - 32) * width;
   
-  for (int column = 0; column < width; column++)
+  for (byte column = 0; column < width; column++)
   {
-    setBox(x + column, y, 1, height);
-    sendCommand(RAMWR);
-    
-    for (int row = 0; row < height; row++)
+    for (byte columnCount = 0; columnCount < zoom; columnCount++)
     {
-      if ((1<<row) & pgm_read_byte_near(font + start + column))
-        sendData(color);
-      else
-        sendData(background);
+      setBox(x + column * zoom + columnCount, y, 1, height * zoom);
+      sendCommand(RAMWR);
+      
+      for (byte row = 0; row < height; row++)
+      {
+        for (byte rowCount = 0; rowCount < zoom; rowCount++)
+        {
+          if ((1<<row) & pgm_read_byte_near(font + start + column))
+            sendData(color);
+          else
+            sendData(background);
+        }
+      }
     }
   }
 }
