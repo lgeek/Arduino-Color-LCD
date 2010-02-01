@@ -3,8 +3,8 @@
   Nokia 132x132 color displays, including the "Knock-Off color LCD"
   from SparkFun.
   
-  Version 0.1.1. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
-  January 10, 2009
+  Version 0.2.0. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
+  February 1, 2010
   Home page: http://www2.cs.man.ac.uk/~gorgovc9/arduino.html
 
   Arduino-Color-LCD is free software: you can redistribute it and/or modify
@@ -142,29 +142,27 @@ void ColorLCD::LCDInit()
 }
 
 // Selects an area of the screen
-void ColorLCD::setBox(byte x1, byte y1, byte x2, byte y2)
+void ColorLCD::setBox(byte x, byte y, byte width, byte height)
 {  
   // Select the columns
   sendCommand(CASET);
-  sendData(x1);
-  sendData(x2);
+  sendData(x);
+  sendData(x + width - 1);
   
   // Select the rows
   sendCommand(PASET);
-  sendData(y1);
-  sendData(y2);
+  sendData(y);
+  sendData(y + height -1 );
 }
 
 // Fill an area of the screen with color
-void ColorLCD::colorFill(byte x1, byte y1, byte x2, byte y2, byte color)
+void ColorLCD::colorFill(byte x, byte y, byte width, byte height, byte color)
 {
   // Compute the dimensions
-  byte width = x2 - x1 + 1;
-  byte height = y2 - y1 + 1;
   uint16_t area = width * height;
   
   // Select a screen area
-  setBox(x1, y1, x2, y2);
+  setBox(x, y, x + width - 1, y + height - 1);
   
   // Fill it with color
   sendCommand(RAMWR);
@@ -181,7 +179,7 @@ void ColorLCD::printChar(char c, byte x, byte y, byte width, byte height, byte c
   
   for (int column = 0; column < width; column++)
   {
-    setBox(x + column, y, x + column, y + height);
+    setBox(x + column, y, 1, height);
     sendCommand(RAMWR);
     
     for (int row = 0; row < height; row++)

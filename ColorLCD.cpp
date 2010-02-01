@@ -3,8 +3,8 @@
   Nokia 132x132 color displays, including the "Knock-Off color LCD"
   from SparkFun.
   
-  Version 0.1. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
-  December 28, 2009
+  Version 0.2.0. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
+  February 1, 2010
   Home page: http://www2.cs.man.ac.uk/~gorgovc9/arduino.html
 
   Arduino-Color-LCD is free software: you can redistribute it and/or modify
@@ -62,15 +62,15 @@ void ColorLCD::setForeground(byte color)
 }
 
 // Fill an area of the screen with the foreground color
-void ColorLCD::colorFill(byte x1, byte y1, byte x2, byte y2)
+void ColorLCD::colorFill(byte x, byte y, byte width, byte height)
 {
-  colorFill(x1, y1, x2, y2, foreground);
+  colorFill(x, y, width, height, foreground);
 }
 
 // Fills the whole screen with the background color
 void ColorLCD::clear()
 {
-  colorFill(0, 0, 131, 131, background);
+  colorFill(0, 0, 132, 132, background);
   textLength = 0;
   moveCursor(5, 5, 120);
 }
@@ -78,7 +78,7 @@ void ColorLCD::clear()
 // Fills the whole screen with black
 void ColorLCD::reset()
 {
-  colorFill(0, 0, 131, 131, 0x00);
+  colorFill(0, 0, 132, 132, 0x00);
   textLength = 0;
   moveCursor(5, 5, 120);
 }

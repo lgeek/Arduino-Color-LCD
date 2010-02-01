@@ -3,8 +3,8 @@
   Nokia 132x132 color displays, including the "Knock-Off color LCD"
   from SparkFun.
   
-  Version 0.1.1. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
-  December 31, 2009
+  Version 0.2.0. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
+  February 1, 2010
   Home page: http://www2.cs.man.ac.uk/~gorgovc9/arduino.html
 
   Arduino-Color-LCD is free software: you can redistribute it and/or modify
@@ -31,10 +31,10 @@
 #define PORT PORTD
 
 // Pins
-#define CS 2
-#define CLK 3
-#define SDA 4
-#define RESET 5
+#define CS 5
+#define CLK 4
+#define SDA 3
+#define RESET 2
 
 // Fast digital I/O
 // Arduino's digitalWrite is too slow 
@@ -67,7 +67,7 @@ class ColorLCD
     void setBackground(byte color);
     void setForeground(byte color);
     
-    void colorFill(byte x1, byte y1, byte x2, byte y2, byte color);
+    void colorFill(byte x, byte y, byte width, byte height, byte color);
     void colorFill(byte x1, byte y1, byte x2, byte y2);
 
     void printChar(char c, byte x, byte y, byte width, byte height, byte color);
@@ -101,7 +101,7 @@ class ColorLCD
     void sendData(byte data);
     void sendCommand(byte command);
     
-    void setBox(byte x1, byte y1, byte x2, byte y2);
+    void setBox(byte x, byte y, byte width, byte height);
     
     static prog_uchar font[475];
 };

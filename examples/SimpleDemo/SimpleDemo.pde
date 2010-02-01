@@ -3,8 +3,8 @@
   Nokia 132x132 color displays, including the "Knock-Off color LCD"
   from SparkFun.
   
-  Version 0.1. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
-  December 28, 2009
+  Version 0.2.0. Created by Cosmin Gorgovan <cosmin AT linux-geek.org>,
+  February 1, 2010
   Home page: http://www2.cs.man.ac.uk/~gorgovc9/arduino.html
 
   Arduino-Color-LCD is free software: you can redistribute it and/or modify
@@ -51,14 +51,14 @@ void loop()
   // Write the title with red color on top of a blue background
   Serial.println("Printing the title");
   lcd.setBackground(BLUE);
-  lcd.colorFill(0, 0, 131, 26, BLUE);
+  lcd.colorFill(0, 0, 132, 26, BLUE);
   lcd.moveCursor(5, 10);
   lcd.print("Nokia 6100 LCD Demo", RED);
   
   // Print the rest of the text
   Serial.println("Printing the contents");
   lcd.setBackground(BLACK);
-  lcd.moveCursor(5, 32);
+  lcd.moveCursor(5, 32, 132-10);
   lcd.println("Powered by Arduino");
   lcd.println("Awesome coding\nby Cosmin Gorgovan", BLUE);
   lcd.println("GPL library: \nwww2.cs.man.ac.uk/~gorgovc9/arduino.html", GRAY);
