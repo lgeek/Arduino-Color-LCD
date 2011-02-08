@@ -80,7 +80,7 @@ void ColorLCD::LCDInit()
   sendData(0b00011); 		// 2 divisions, Field swithcing period (no idea)
   sendData(32);   		// 132 lines to be display
   sendData(12);   		// Inversely hightlighted lines - 1 (no idea)
-  sendData(1);                  // Dispersion (again, no idea what's that)
+  sendData(2);                  // Dispersion (again, no idea what's that)
   
   // Set common output scan direction
   sendCommand(COMSCN);
@@ -105,6 +105,15 @@ void ColorLCD::LCDInit()
   sendData(0b00000011); // scanning directions (address, column, page)
   sendData(0b00000000); // RGB mode for the LCD panel
   sendData(0b00000001); // Grayscale mode
+
+  // Got voltage control values from http://www.sparkfun.com/tutorial/Nokia%206100%20LCD%20Display%20Driver.pdf
+  // Voltage control (contrast setting)
+  sendCommand(VOLCTR);
+  sendData(36);
+  // P1 = 32 volume value (adjust this setting for your display 0 .. 63)
+  sendData(3);
+  // P2 = 3 resistance ratio (determined by experiment)
+
 
   // Set color lookup table for 256 grayscale mode
   sendCommand(RGBSET8); 
